@@ -7,10 +7,41 @@ const heading = React.createElement(
   "Hello from React!!!!"
 );
 
-console.log("heading: ", heading);
+const parent = React.createElement(
+  "div",
+  {
+    id: "parent",
+  },
+  React.createElement(
+    "div",
+    {
+      id: "child",
+    },
+    [
+      React.createElement(
+        "h1",
+        {
+          id: "heading",
+          xyz: "abc",
+        },
+        "Hello from React 1!!!!"
+      ),
+      React.createElement(
+        "h1",
+        {
+          id: "heading",
+          xyz: "abc",
+        },
+        "Hello from React 2!!!!"
+      ),
+    ]
+  )
+);
+
+// console.log("heading: ", heading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 console.log("root: ", root);
 
-root.render(heading);
+root.render(parent);
