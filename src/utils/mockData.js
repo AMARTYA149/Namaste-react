@@ -1,28 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import logo from "./assets/img/paitpooja_logo.png";
-// import { Header } from "./header";
-import logo from "./assets/img/paitpooja_logo.png";
-import restaurantLogo from "./assets/img/restaurant_logo.png";
-
-// High Level Planning
-/**
- * Header
- * - Logo
- * - Nav Items
- * Body
- * - Search
- * - RestaurantContainer
- * - RestaurantCard
- *  - Image
- *  - Restaurant Name, Cuisines, ETA, Star Rating
- * Footer
- * - Copyright
- * - Links
- * - Address
- * - Contact
- */
-
 const resList = [
   {
     type: "restaurant",
@@ -168,7 +143,7 @@ const resList = [
       areaName: "Pulikeshi Nagar",
       costForTwo: "₹250 for two",
       cuisines: ["Pizzas", "Pastas", "Italian", "Desserts", "Beverages"],
-      avgRating: 4.3,
+      avgRating: 4.1,
       parentId: "4961",
       avgRatingString: "4.3",
       totalRatingsString: "3.6K+",
@@ -230,7 +205,7 @@ const resList = [
       areaName: "R.T. Nagar",
       costForTwo: "₹200 for two",
       cuisines: ["Burgers", "American", "Fast Food", "Snacks"],
-      avgRating: 4.3,
+      avgRating: 4.2,
       parentId: "972",
       avgRatingString: "4.3",
       totalRatingsString: "3.4K+",
@@ -280,69 +255,4 @@ const resList = [
   },
 ];
 
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const {cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla} = resData?.data;
-  
-  return (
-    <div className="card-restaurant">
-      <img
-        className="logo-restaurant"
-        alt="Restaurant Logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} ⭐️</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{sla.slaString}</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="container-restaurant">
-        {/* Restaurant Cards */}
-        {resList.map((restaurant) => <RestaurantCard key={restaurant.data.id} resData={restaurant}/>)}
-      
-      </div>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="container-logo">
-        <img className="logo" src={logo} alt="Pait Pooja Logo" />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resList;

@@ -18,3 +18,21 @@
    - HTTPs
    - Tree Shaking - remove unused code
    - Differential dev and prod bundles
+
+// High Level Planning - PaitPooja
+/**
+ * Header
+ * - Logo
+ * - Nav Items
+ * Body
+ * - Search
+ * - RestaurantContainer
+ * - RestaurantCard
+ *  - Image
+ *  - Restaurant Name, Cuisines, ETA, Star Rating
+ * Footer
+ * - Copyright
+ * - Links
+ * - Address
+ * - Contact
+ */
