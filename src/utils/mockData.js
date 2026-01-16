@@ -1,7 +1,7 @@
 const resList = [
   {
     type: "restaurant",
-    data: {
+    info: {
       id: "43836",
       name: "McDonald's",
       cloudinaryImageId:
@@ -76,7 +76,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       id: "5938",
       name: "Burger King",
       cloudinaryImageId:
@@ -135,7 +135,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       id: "755276",
       name: "La Pino'z Pizza",
       cloudinaryImageId: "f44bc9708c514cd2dd6ae0d8b4677214",
@@ -196,7 +196,7 @@ const resList = [
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       id: "382636",
       name: "Wendy's Burgers",
       cloudinaryImageId:

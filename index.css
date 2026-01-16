@@ -30,15 +30,15 @@
     padding: 10px;
 }
 
-.card-restaurant{
+.card-restaurant, .card-shimmer{
     padding: 5px;
-    /* height: 300px; */
+    min-height: 300px;
     width: 200px;
     background-color: #f0f0f0;
    
 }
 
-.container-restaurant{
+.container-restaurant, .container-shimmer{
     display: flex;
     flex-wrap: wrap;
     gap: 15px;

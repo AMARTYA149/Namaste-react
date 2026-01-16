@@ -1,11 +1,26 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
-import { useState } from "react";
-
+// import resList from "../utils/mockData";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 const Body = () => {
   // Local State variable
-  const [listOfRestaurant, setListOfRestaurants] = useState(resList);
-  // // Normal JS Variable
+  const [listOfRestaurant, setListOfRestaurants] = useState([]);
+
+  useEffect(()=>{
+    fetchData();
+  },[]);
+
+  const fetchData = async() =>{
+    const data = await fetch("https://namastedev.com/api/v1/listRestaurants");
+
+    const json = await data.json();
+
+    let responseData = json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    console.log("JSON Data: ", responseData);
+    setListOfRestaurants(responseData);
+
+  }
+  // Normal JS Variable
   // let listOfRestaurantJS = [
   //   {
   //     data: {
@@ -130,6 +145,11 @@ const Body = () => {
   //     },
   //   },
   // ];
+
+  if(listOfRestaurant.length === 0){
+    return <Shimmer/>
+  }
+
   return (
     <div className="body">
       <div className="filter">
@@ -145,8 +165,9 @@ const Body = () => {
       </div>
       <div className="container-restaurant">
         {/* Restaurant Cards */}
+       {/* { console.log("listOfRestaurant: ", listOfRestaurant[0].info.id)} */}
         {listOfRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+          <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
         ))}
       </div>
     </div>
